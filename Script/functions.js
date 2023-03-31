@@ -101,6 +101,7 @@ function launchButton(x,y,length,height){
     }
 }
 
+var startSlider = canvasHeight;
 function menu(){
     background(0, 0, 0);
     image(XSS ,0, 0, canvasWidth, canvasHeight);
@@ -127,13 +128,11 @@ function menu(){
             image(projectileImage, menuParticles[0][i], menuParticles[1][i]);
         }
     }
-    if(performance.now() < 250){
-        slider = canvasHeight;
-    }else{
-        slider -= 5;
+    if(startSlider > -10){
+        startSlider -= 5;
     }
     fill(0);
-    rect(0, 0, canvasWidth, slider);
+    rect(0, 0, canvasWidth, startSlider);
 
     if(isKeyPressed(" ")){
         start = true;
@@ -141,23 +140,24 @@ function menu(){
     }
 }
 
+var bckgT = { time: 0, midtime: 0 }
+
 function backgroundTheme(){
     var daytime = 180;
     var nighttime = 60;
     if(performance.now() < 20000){
-        midtime = 0;
-        time = 0;
+
     }
-    if(performance.now() - time < 600000){
+    if(performance.now() - bckgT.time < 600000){
         background(90, 120, daytime);
-        image(sun, (performance.now() - time) * (canvasWidth / 510000) - 60, 100);
-    }else if(performance.now() - time < 600500){
-        midtime = performance.now();
-    }else if(performance.now() - time < 1000000){
+        image(sun, (performance.now() - bckgT.time) * (canvasWidth / 510000) - 60, 100);
+    }else if(performance.now() - bckgT.time < 600500){
+        bckgT.midtime = performance.now();
+    }else if(performance.now() - bckgT.time < 1000000){
         background(nighttime, nighttime, nighttime);
         image(moon, (performance.now() - midtime) * (canvasWidth / 400000), 100);
     }else{
-        time = performance.now();
+        bckgT.time = performance.now();
     }
     image(mountains, 0, 0, canvasWidth, canvasHeight);
 }
