@@ -145,9 +145,6 @@ var bckgT = { time: 0, midtime: 0 }
 function backgroundTheme(){
     var daytime = 180;
     var nighttime = 60;
-    if(performance.now() < 20000){
-
-    }
     if(performance.now() - bckgT.time < 600000){
         background(90, 120, daytime);
         image(sun, (performance.now() - bckgT.time) * (canvasWidth / 510000) - 60, 100);
