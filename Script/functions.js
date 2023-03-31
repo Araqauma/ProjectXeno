@@ -140,21 +140,22 @@ function menu(){
     }
 }
 
-var bckgT = { time: 0, midtime: 0 }
+var bckgTtime = 0;
+var bckgTmidtime = 0;
 
 function backgroundTheme(){
     var daytime = 180;
     var nighttime = 60;
-    if(performance.now() - bckgT.time < 600000){
+    if(performance.now() - bckgTtime < 600000){
         background(90, 120, daytime);
-        image(sun, (performance.now() - bckgT.time) * (canvasWidth / 510000) - 60, 100);
-    }else if(performance.now() - bckgT.time < 600500){
-        bckgT.midtime = performance.now();
-    }else if(performance.now() - bckgT.time < 1000000){
+        image(sun, (performance.now() - bckgTtime) * (canvasWidth / 510000) - 60, 100);
+    }else if(performance.now() - bckgTtime < 600500){
+        bckgTmidtime = performance.now();
+    }else if(performance.now() - bckgTtime < 1000000){
         background(nighttime, nighttime, nighttime);
-        image(moon, (performance.now() - bckgT.midtime) * (canvasWidth / 400000), 100);
+        image(moon, (performance.now() - bckgTmidtime) * (canvasWidth / 400000), 100);
     }else{
-        bckgT.time = performance.now();
+        bckgTtime = performance.now();
     }
     image(mountains, 0, 0, canvasWidth, canvasHeight);
 }
