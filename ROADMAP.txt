@@ -1,0 +1,12 @@
+ROADMAP - PROJECT XENO
+.....................................................................................
+0.0.4 - World generation
+0.0.5 - Survival system
+0.2.0 - Gauss weapons & audio expansion
+0.2.1 - Hotbar rework
+0.2.4 - Starting screen animation
+0.2.7 - Character editor
+0.3.6 - Progress system & crimson biome expansion
+0.3.8 - Crimsonite weapons
+0.4.0 - Buildables & automation
+0.4.2 - Buildable defenses
