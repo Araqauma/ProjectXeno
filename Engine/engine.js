@@ -2,26 +2,6 @@ function write(text){
     console.log(text);
 }
 
-function isKeyPressed(key) {
-    return sketch.isKeyPressed(key);
-}
-
-function getImage(path){
-    var img = new Image();
-    img.src = path;
-    return img;
-}
-
-function image(img, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
-    if(typeof dHeight !== "undefined"){
-        sketch.partOfImage({img: img, sx: sx, sy: sy, sWidth: sWidth, sHeight: sHeight, dx: dx, dy: dy, dWidth: dWidth, dHeight: dHeight});
-    }else if(typeof sHeight !== "undefined"){
-        sketch.resizedImage({img: img, x: sx, y: sy, width: sWidth, height: sHeight});
-    }else{
-        sketch.image({img: img, x: sx, y: sy});
-    }
-}
-
 const homeIcon = {  x: 5,  y: 5,   width: 30,   height: 30,  icon: getImage("Engine/homeIcon.png")  };
 const homeLabel = { x: 5,  y: 50,  width: 260,   height: 80,  icon: getImage("Engine/homeLabel.png") };
 const saveIcon = {  x: 5,  y: 40,  width: 30,   height: 30,  icon: getImage("Engine/saveIcon.png")   };
