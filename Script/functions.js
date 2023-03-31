@@ -144,7 +144,7 @@ function menu(){
 function backgroundTheme(){
     var daytime = 180;
     var nighttime = 60;
-    if(performance.now() < 500){
+    if(performance.now() < 20000){
         midtime = 0;
         time = 0;
     }
