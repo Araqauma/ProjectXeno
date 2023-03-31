@@ -152,7 +152,7 @@ function backgroundTheme(){
         bckgT.midtime = performance.now();
     }else if(performance.now() - bckgT.time < 1000000){
         background(nighttime, nighttime, nighttime);
-        image(moon, (performance.now() - midtime) * (canvasWidth / 400000), 100);
+        image(moon, (performance.now() - bckgT.midtime) * (canvasWidth / 400000), 100);
     }else{
         bckgT.time = performance.now();
     }
